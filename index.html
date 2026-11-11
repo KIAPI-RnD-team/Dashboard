@@ -357,50 +357,63 @@ tbody tr:hover{background:#fafbfc}
 
 /* ── 집행 프로세스 안내 ── */
 .pg-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 22px}
-.pg-title{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.pg-title .ic{width:40px;height:40px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(91,95,232,.3)}
+.pg-title{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.pg-title .ic{width:40px;height:40px;border-radius:12px;background:#1e3a8a;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(30,58,138,.3)}
 .pg-title .ic svg{width:21px;height:21px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .pg-title h2{font-size:19px;font-weight:800;letter-spacing:-.4px;margin:0}
-.pg-title h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.pg-sub{font-size:12.5px;color:var(--text3);margin:0 0 20px 52px}
-.pg-grp{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:4px 0}
-.pg-flow{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;margin:4px 0}
-.pg-flow .dn{display:flex;justify-content:center;color:var(--accent)}
-.pg-flow .dn i{display:block;width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:16px solid var(--accent);margin:6px 0}
-.pg-flow .ln{border-top:1px dashed #d8dcef}
-.pg-gl{background:var(--accent-bg);border:1px solid #dfe2fc;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 8px;font-weight:800;font-size:15px;color:#2c3a8c;line-height:1.35}
-.pg-gl small{display:block;font-size:11.5px;font-weight:700;color:var(--text3);margin-top:3px}
-.pg-gl.dash{background:var(--grad);border:0;color:#fff;box-shadow:0 4px 12px rgba(91,95,232,.28)}
-.pg-gl.dash small{color:rgba(255,255,255,.8)}
-.pg-gl svg{width:22px;height:22px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-bottom:5px}
-.pg-steps{display:flex;flex-direction:column;gap:10px}
-.pg-row{display:grid;grid-template-columns:78px 1fr 22px 170px;align-items:center;gap:10px}
-.pg-no{background:#1e2a6e;color:#fff;border-radius:10px;font-weight:800;font-size:13px;text-align:center;padding:12px 0;letter-spacing:.2px}
-.pg-task{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 16px;font-weight:700;font-size:14px;min-height:48px}
-.pg-task svg{width:22px;height:22px;stroke:var(--accent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.pg-task small{display:block;font-size:11.5px;color:var(--text3);font-weight:600}
+.pg-title h2 em{font-style:normal;color:var(--blue)}
+.pg-flow{display:grid;grid-template-columns:170px 56px 1fr;grid-template-rows:repeat(5,76px);row-gap:16px}
+.pg-gl{position:relative;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(180deg,#eef4ff,#dde8fb);border:1px solid #cfdcf5;font-weight:800;font-size:16px;color:#1e2a5a;line-height:1.3;gap:6px}
+.pg-gl small{display:block;font-size:11.5px;font-weight:700;color:var(--text2)}
+.pg-gl .gi{width:46px;height:46px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(30,58,138,.12)}
+.pg-gl .gi svg{width:26px;height:26px;stroke:#1e3a8a;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pg-gl.dash{background:linear-gradient(180deg,#1e40af,#1e2a6e);border:0;color:#fff}
+.pg-gl.dash small{color:rgba(255,255,255,.75)}
+.pg-gl.down::after{content:'';position:absolute;left:50%;bottom:-15px;transform:translateX(-50%);border-left:16px solid transparent;border-right:16px solid transparent;border-top:12px solid #1e40af}
+.pg-gl.g1{grid-area:1/1/3/2}.pg-gl.g2{grid-area:3/1/5/2}.pg-gl.g3{grid-area:5/1/6/2}
+.pg-cn{position:relative}
+.pg-cn.c1{grid-area:1/2/3/3}.pg-cn.c2{grid-area:3/2/5/3}.pg-cn.c3{grid-area:5/2/6/3}
+.pg-cn::before{content:'';position:absolute;left:0;width:22px;top:50%;border-top:2px solid #1e3a8a}
+.pg-cn::after{content:'';position:absolute;left:22px;right:0;top:38px;bottom:38px;border:2px solid #1e3a8a;border-right:0;border-radius:8px 0 0 8px}
+.pg-cn.c3::after{display:none}.pg-cn.c3::before{width:100%}
+.pg-st{display:grid;grid-template-columns:1fr 26px 210px;align-items:center;gap:10px;position:relative}
+.pg-st.s1{grid-area:1/3}.pg-st.s2{grid-area:2/3}.pg-st.s3{grid-area:3/3}.pg-st.s4{grid-area:4/3}.pg-st.s5{grid-area:5/3}
+.pg-box{height:76px;display:flex;align-items:center;gap:16px;border-radius:14px;padding:0 18px 0 52px;margin-left:38px;
+  background:linear-gradient(90deg,#f3f7ff,#e8effc);border:1px solid #d6e2f7;position:relative}
+.pg-num{position:absolute;left:-38px;top:50%;transform:translateY(-50%);height:36px;padding:0 14px;border-radius:18px;background:#1e2a6e;color:#fff;white-space:nowrap;
+  font-weight:800;font-size:14px;letter-spacing:.2px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;box-shadow:0 2px 6px rgba(30,42,110,.3)}
+.pg-ti{width:46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(30,58,138,.1)}
+.pg-ti svg{width:26px;height:26px;stroke:#1e3a8a;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pg-tx b{display:block;font-size:15.5px;font-weight:800;color:#1e2a5a;letter-spacing:-.2px}
+.pg-tx span{display:block;font-size:12px;color:var(--text2);margin-top:2px}
 .pg-arr{color:var(--blue);text-align:center}
-.pg-arr svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.pg-who{background:var(--blue-bg);border:1px solid #d3e3fd;border-radius:12px;text-align:center;padding:12px 8px;font-weight:800;font-size:13.5px;color:#1b4fb8}
-.pg-who small{display:block;font-size:10.5px;font-weight:700;color:var(--text3);letter-spacing:.3px}
-.pg-note{display:flex;gap:14px;align-items:center;background:var(--amber-bg);border:1px solid #fbe3b5;border-radius:14px;padding:14px 18px;margin-top:18px}
+.pg-arr svg{width:22px;height:22px;stroke:currentColor;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.pg-who{height:76px;display:flex;align-items:center;gap:12px;background:#f3f7ff;border:1px solid #d6e2f7;border-radius:14px;padding:0 16px}
+.pg-who svg{width:30px;height:30px;stroke:#1e3a8a;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.pg-who small{display:block;font-size:11px;font-weight:700;color:var(--text3)}
+.pg-who b{display:block;font-size:14.5px;font-weight:800;color:#1e2a5a}
+.pg-note{display:flex;gap:14px;align-items:center;background:var(--amber-bg);border:1px solid #fbe3b5;border-radius:14px;padding:14px 18px;margin-top:22px;font-size:13px;color:var(--text2)}
 .pg-note .ex{width:26px;height:26px;border-radius:50%;background:var(--amber);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
-.pg-note ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--text2);line-height:1.7}
 .pg-note b{color:var(--text)}
 @media(max-width:820px){
   .pg-card{padding:18px 14px}
-  .pg-sub{margin-left:0}
-  .pg-grp{grid-template-columns:1fr;gap:10px}
-  .pg-flow{grid-template-columns:1fr}
-  .pg-flow .ln{display:none}
-  .pg-gl{flex-direction:row;gap:6px;padding:9px;font-size:14px}
-  .pg-gl small{display:inline;margin:0}
-  .pg-gl svg{margin:0}
-  .pg-row{grid-template-columns:62px 1fr;gap:8px}
+  .pg-flow{display:flex;flex-direction:column;gap:10px}
+  .pg-cn{display:none}
+  .pg-gl{flex-direction:row;padding:10px;font-size:15px;gap:10px}
+  .pg-gl small{display:inline;margin-left:4px}
+  .pg-gl .gi{width:34px;height:34px}.pg-gl .gi svg{width:20px;height:20px}
+  .pg-gl.down{margin-top:6px}
+  .pg-gl.down::after{display:none}
+  .pg-gl.g2,.pg-gl.g3{margin-top:22px}
+  .pg-gl.g2::before,.pg-gl.g3::before{content:'';position:absolute;left:50%;top:-24px;transform:translateX(-50%);border-left:16px solid transparent;border-right:16px solid transparent;border-top:12px solid #1e40af}
+  .pg-st{grid-template-columns:1fr;gap:6px}
+  .pg-box{height:auto;min-height:64px;padding:10px 12px 10px 50px;margin-left:38px}
+  .pg-tx b{font-size:14.5px}
   .pg-arr{display:none}
-  .pg-who{grid-column:2;padding:7px;font-size:12.5px;text-align:left;padding-left:14px}
-  .pg-who small{display:inline;margin-right:6px}
-  .pg-task{font-size:13.5px;padding:10px 12px}
+  .pg-who{height:auto;padding:8px 12px;margin-left:38px}
+  .pg-who svg{width:22px;height:22px}
+  .pg-who small,.pg-who b{display:inline;margin-right:6px}
 }
 
 
@@ -612,28 +625,20 @@ tbody tr:hover{background:#fafbfc}
   <div class="view" id="view-guide">
   <div class="pg-card">
     <div class="pg-title"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></svg></div><h2>전략기획본부 <em>연구개발비 집행</em> 프로세스</h2></div>
-    <div class="pg-sub">연구비가 계획부터 대시보드 반영까지 어떤 순서로, 누가 처리하는지 안내합니다.</div>
-    <div class="pg-grp"><div class="pg-gl">내부 결재</div><div class="pg-steps">
-      <div class="pg-row"><div class="pg-no">Step.1</div>
-        <div class="pg-task"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="6" rx="6" ry="2.5"/><path d="M3 6v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V6"/><path d="M3 10v4c0 1.4 2.7 2.5 6 2.5"/><ellipse cx="15" cy="14" rx="6" ry="2.5"/><path d="M9 14v4c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-4"/></svg><div>사업비 사용 계획 수립</div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><small>담당</small>과제 책임자</div></div>
-      <div class="pg-row"><div class="pg-no">Step.2</div>
-        <div class="pg-task"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"/><path d="M14 3v5h5"/><path d="M19 8v4"/><path d="M8 12h6M8 16h3"/><circle cx="17.5" cy="17.5" r="3.5"/><path d="m16 17.5 1 1 2-2"/></svg><div>지출 품의 및 결의 작성</div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><small>담당</small>과제 담당자</div></div>
-    </div></div>
-    <div class="pg-flow"><div class="dn"><i></i></div><div class="ln"></div></div>
-    <div class="pg-grp"><div class="pg-gl">과제시스템<small>RCMS · 이지바로</small></div><div class="pg-steps">
-      <div class="pg-row"><div class="pg-no">Step.3</div>
-        <div class="pg-task"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/><path d="m11 8 3.5 3.5-1.6.3-.9 1.6z"/></svg><div>연구비 집행등록<small>시스템 등록</small></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><small>담당</small>사업운영팀</div></div>
-      <div class="pg-row"><div class="pg-no">Step.4</div>
-        <div class="pg-task"><svg viewBox="0 0 24 24"><path d="M3 7h13l-3-3M21 17H8l3 3"/></svg><div>연구비 이체 실행</div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><small>담당</small>경영기획본부</div></div>
-    </div></div>
-    <div class="pg-flow"><div class="dn"><i></i></div><div class="ln"></div></div>
-    <div class="pg-grp"><div class="pg-gl dash"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 13v-2M10 13V9M13 13v-3"/><circle cx="17" cy="10" r="2"/></svg>대시보드</div><div class="pg-steps">
-      <div class="pg-row"><div class="pg-no">Step.5</div>
-        <div class="pg-task"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/></svg><div>이체 완료된 내역 반영</div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><small>담당</small>사업운영팀</div></div>
-    </div></div>
-    <div class="pg-note"><div class="ex">!</div><ul>
-      <li><b>Step.3</b> 진흥원운영비, 세금계산서 발급 건, 인건비, 간접비는 <b>경영기획본부</b>에서 과제 시스템 등록 진행</li>
-    </ul></div>
+    <div class="pg-flow">
+      <div class="pg-gl g1 down">내부 결재</div>
+      <div class="pg-cn c1"></div>
+      <div class="pg-st s1"><div class="pg-box"><div class="pg-num">Step.1</div><div class="pg-ti"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M14 3v5h5v2"/><path d="M8 12h4M8 16h2"/><rect x="13" y="12" width="8" height="10" rx="1.5"/><path d="M15 15h4M15 18h.01M17 18h.01M19 18h.01M15 20h.01M17 20h.01M19 20h.01"/></svg></div><div class="pg-tx"><b>사업비 사용 계획 수립</b><span>과제 예산 범위 내 집행 계획 수립</span></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><small>담당</small><b>과제 책임자</b></div></div></div>
+      <div class="pg-st s2"><div class="pg-box"><div class="pg-num">Step.2</div><div class="pg-ti"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h5M8 17l2-2 2 2 3-3"/></svg></div><div class="pg-tx"><b>지출 품의 및 결의 작성</b><span>품의서 및 결의서 작성</span></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><small>담당</small><b>과제 담당자</b></div></div></div>
+      <div class="pg-gl g2 down"><div>과제시스템<small>RCMS · 이지바로</small></div></div>
+      <div class="pg-cn c2"></div>
+      <div class="pg-st s3"><div class="pg-box"><div class="pg-num">Step.3</div><div class="pg-ti"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 20h22"/><path d="M7 8h6M7 11h10"/></svg></div><div class="pg-tx"><b>연구비 집행등록</b><span>시스템 등록</span></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.3"/><circle cx="19" cy="10" r="2.3"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0M1.5 20a4 4 0 0 1 5-3.8M22.5 20a4 4 0 0 0-5-3.8"/></svg><div><small>담당</small><b>사업운영팀</b></div></div></div>
+      <div class="pg-st s4"><div class="pg-box"><div class="pg-num">Step.4</div><div class="pg-ti"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><path d="M8 6v4M6.5 7.5h3"/><circle cx="16" cy="16" r="5"/><path d="M16 14v4M14.5 15.5h3"/><path d="M15 3a6 6 0 0 1 6 6M9 21a6 6 0 0 1-6-6"/><path d="m19 7 2 2 2-2M5 17l-2-2-2 2"/></svg></div><div class="pg-tx"><b>연구비 이체 실행</b><span>계좌 이체 진행</span></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="12" height="18"/><path d="M16 9h4v12h-4M2 21h20M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1"/></svg><div><small>담당</small><b>재무회계팀</b></div></div></div>
+      <div class="pg-gl g3 dash"><div class="gi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 13v-2M10 13V9M13 13v-3"/><circle cx="17" cy="10" r="2"/></svg></div>대시보드</div>
+      <div class="pg-cn c3"></div>
+      <div class="pg-st s5"><div class="pg-box"><div class="pg-num">Step.5</div><div class="pg-ti"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 16v-3M11 16V9M15 16v-5"/><path d="m14 7 3-2 3 2"/></svg></div><div class="pg-tx"><b>이체 완료된 내역 반영</b><span>대시보드 집행현황 반영</span></div></div><div class="pg-arr"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></div><div class="pg-who"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.3"/><circle cx="19" cy="10" r="2.3"/><path d="M6.5 20a5.5 5.5 0 0 1 11 0M1.5 20a4 4 0 0 1 5-3.8M22.5 20a4 4 0 0 0-5-3.8"/></svg><div><small>담당</small><b>사업운영팀</b></div></div></div>
+    </div>
+    <div class="pg-note"><div class="ex">!</div><div><b>Step.3</b> 진흥원운영비, 세금계산서 발급 건, 인건비, 간접비는 <b>재무회계팀</b>에서 과제 시스템 등록 진행</div></div>
   </div>
   </div>
 
